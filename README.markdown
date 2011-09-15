@@ -1,4 +1,3 @@
-
 # JavaScript Linkify: Process links in text! #
 
 This fork adds:
