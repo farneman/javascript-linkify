@@ -1,13 +1,21 @@
 
 # JavaScript Linkify: Process links in text! #
 
-This fork adds a twitter option:
-  linkify('@mahemoff', { twitter: true })
-is:
-  <a href="http://twitter.com/mahemoff" title="http://twitter.com/mahemoff">@mahemoff</a>
+This fork adds:
+(1) a twitter option:
+
+    linkify('@mahemoff', { twitter: true })
+becomes:
+    <a href="http://twitter.com/mahemoff" title="http://twitter.com/mahemoff">@mahemoff</a>
 
 In doing so, there's some refactoring to simplify the way the uber URI regexp is built up.
 There's also some basic support for Node and a tiny test (in CoffeeScript).
+
+(2) an attribs option: 
+
+    linkify('a.com b.com')
+becomes:
+    <a href="http://a.com" title="http://a.com target="_blank' >a.com</a> <a href="http://b.com" title="http://b.com target="_blank' >b.com</a>
 
 # JavaScript Linkify: Process links in text! #
 [http://benalman.com/projects/javascript-linkify/](http://benalman.com/projects/javascript-linkify/)

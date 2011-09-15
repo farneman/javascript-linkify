@@ -100,11 +100,13 @@
       },
       
       default_options = {
-        callback: function( text, href ) {
-          return href ? '<a href="' + encodeURI(href) + '" title="' + encodeURI(href) + '">' + text + '</a>' : text;
+        callback: function( text, href, options ) {
+          return href ? '<a href="' + encodeURI(href) + '" title="' + encodeURI(href) + 
+                        buildAttribsString(options ? options.attribs : '') + '>' + text + '</a>' : text;
         },
         punct_regexp: /(?:[!?.,:;'"]|(?:&|&amp;)(?:lt|gt|quot|apos|raquo|laquo|rsaquo|lsaquo);)$/,
-        twitter: false
+        twitter: false,
+        attribs: {}
       };
     
     return function( txt, options ) {
@@ -201,7 +203,7 @@
         
         // Push preceding non-link text onto the array.
         if ( idx_prev != idx ) {
-          parts.push([ txt.slice( idx_prev, idx ) ]);
+          parts.push([ txt.slice( idx_prev, idx ), null ]);
           idx_prev = idx_last;
         }
         
@@ -210,16 +212,22 @@
       };
       
       // Push remaining non-link text onto the array.
-      parts.push([ txt.substr( idx_prev ) ]);
-      
+      parts.push([ txt.substr( idx_prev ), null ]);
+
       // Process the array items.
       for ( i = 0; i < parts.length; i++ ) {
-        html += options.callback.apply( null, parts[i] );
+        html += options.callback.apply( null, parts[i].concat(options) );
       }
       
       // In case of catastrophic failure, return the original text;
       return html || txt;
     };
+
+    function buildAttribsString(attribs) {
+      var s=" ";
+      for (var key in attribs) s+= key + '="' + attribs[key] + "' ";
+      return (s==" ") ? '' : s; // add leading space if there are attribs
+    }
     
   })();
 
