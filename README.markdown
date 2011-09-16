@@ -1,6 +1,5 @@
-# JavaScript Linkify: Process links in text! #
+# What this fork adds:
 
-This fork adds:
 (1) a twitter option:
 
     linkify('@mahemoff', { twitter: true })
@@ -12,9 +11,11 @@ There's also some basic support for Node and a tiny test (in CoffeeScript).
 
 (2) an attribs option: 
 
-    linkify('a.com b.com')
+    linkify('a.com b.com', { target: '_blank' })
 becomes:
     <a href="http://a.com" title="http://a.com target="_blank' >a.com</a> <a href="http://b.com" title="http://b.com target="_blank' >b.com</a>
+
+(Note these links have target='_blank' as an extra attribute, in addition to the regular href and title.)
 
 # JavaScript Linkify: Process links in text! #
 [http://benalman.com/projects/javascript-linkify/](http://benalman.com/projects/javascript-linkify/)
