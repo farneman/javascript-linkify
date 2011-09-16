@@ -1,6 +1,6 @@
 # What this fork adds:
 
-(1) a twitter option:
+## (1) a twitter option:
 
     linkify('@mahemoff', { twitter: true })
 becomes:
@@ -9,13 +9,13 @@ becomes:
 In doing so, there's some refactoring to simplify the way the uber URI regexp is built up.
 There's also some basic support for Node and a tiny test (in CoffeeScript).
 
-(2) an attribs option: 
+## (2) an attribs option: 
 
     linkify('a.com b.com', { target: '_blank' })
 becomes:
     <a href="http://a.com" title="http://a.com target="_blank' >a.com</a> <a href="http://b.com" title="http://b.com target="_blank' >b.com</a>
 
-(Note these links have target='_blank' as an extra attribute, in addition to the regular href and title.)
+(ote these links have target='_blank' as an extra attribute, in addition to the regular href and title.
 
 # JavaScript Linkify: Process links in text! #
 [http://benalman.com/projects/javascript-linkify/](http://benalman.com/projects/javascript-linkify/)
