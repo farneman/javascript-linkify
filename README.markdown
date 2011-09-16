@@ -1,6 +1,6 @@
 # What this fork adds:
 
-## (1) a twitter option:
+## Twitter option
 
     linkify('@mahemoff', { twitter: true })
 becomes:
@@ -9,7 +9,7 @@ becomes:
 In doing so, there's some refactoring to simplify the way the uber URI regexp is built up.
 There's also some basic support for Node and a tiny test (in CoffeeScript).
 
-## (2) an attribs option: 
+## Attribs option
 
     linkify('a.com b.com', { target: '_blank' })
 becomes:
