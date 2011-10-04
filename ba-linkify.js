@@ -101,7 +101,7 @@
       
       default_options = {
         callback: function( text, href, options ) {
-          return href ? '<a href="' + encodeURI(href) + '" title="' + encodeURI(href) + 
+          return href ? '<a href="' + encodeURI(href) + '" title="' + encodeURI(href) + '"' +
                         buildAttribsString(options ? options.attribs : '') + '>' + text + '</a>' : text;
         },
         punct_regexp: /(?:[!?.,:;'"]|(?:&|&amp;)(?:lt|gt|quot|apos|raquo|laquo|rsaquo|lsaquo);)$/,
@@ -225,8 +225,9 @@
 
     function buildAttribsString(attribs) {
       var s=" ";
-      for (var key in attribs) s+= key + '="' + attribs[key] + "' ";
-      return (s==" ") ? '' : s; // add leading space if there are attribs
+      for (var key in attribs)
+        s+= key + '="' + attribs[key] + '" ';
+      return s.replace(/ $/,'')
     }
     
   })();
