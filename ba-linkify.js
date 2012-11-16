@@ -1,5 +1,12 @@
 /*!
- * JavaScript Linkify - v0.3 - 6/27/2009
+ * JavaScript Linkify - v0.4 - 11/16/2012
+ * https://github.com/farneman/javascript-linkify
+ *
+ * Forked from work by Michael Mahemoff & Eli Ellis:
+ * https://github.com/mahemoff/javascript-linkify
+ * https://github.com/eliellis/javascript-linkify
+ *
+ * Based on the original work by "Cowboy" Ben Alman:
  * http://benalman.com/projects/javascript-linkify/
  * 
  * Copyright (c) 2009 "Cowboy" Ben Alman

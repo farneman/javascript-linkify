@@ -1,4 +1,13 @@
-# What this fork adds:
+# New In This Fork: #
+
+This fork aggregates work from two other forks. It also fixes an caused when
+linkify is given a string with no links in it.
+
+# From @eliellis: #
+
+Updated the Top Level Domain list.
+
+# Added By @mahemoff: #
 
 ## Twitter option
 
