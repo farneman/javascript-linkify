@@ -211,8 +211,11 @@
         parts.push([ link, href ]);
       };
       
-      // Push remaining non-link text onto the array.
-      parts.push([ txt.substr( idx_prev ), null ]);
+      // Push remaining non-link text onto the array. But only if there is
+      // somethign to push (ie. no links in given text).
+      if ( txt ) {
+        parts.push([ txt.substr( idx_prev ), null ]);
+      }
 
       // Process the array items.
       for ( i = 0; i < parts.length; i++ ) {
