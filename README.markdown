@@ -20,7 +20,7 @@ There's also some basic support for Node and a tiny test (in CoffeeScript).
 
 ## Attribs option
 
-    linkify('a.com b.com', { target: '_blank' })
+    linkify('a.com b.com', { attribs: { target: '_blank' } })
 becomes:
     <a href="http://a.com" title="http://a.com target="_blank' >a.com</a> <a href="http://b.com" title="http://b.com target="_blank' >b.com</a>
 
